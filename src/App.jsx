@@ -1,12 +1,13 @@
+import FetchUser from './my-functions-fetch';
 
 function App() {
-
-
-  return (
-    <>
-      <div></div>
-    </>
-  )
+	return (
+		<>
+			<div>
+				<FetchUser />
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
