@@ -149,6 +149,13 @@ describe('It should throw an error', () => {
 	it('should throw an error if input is not a number', () => {
 		expect(() => getFruitStock('pineapples')).toThrowError('stock');
 	});
+
+	it('should return stock count for available fruits', () => {
+		const result = getFruitStock('apples');
+		expect(result).toBeDefined();
+		expect(typeof result).toBe('number');
+		expect(result).toBeGreaterThanOrEqual(0);
+	});
 });
 
 //Øvelse 5: Mocking af afhængigheder
@@ -188,6 +195,62 @@ describe('saveData with fake timers', () => {
 		// Promise er stadig pending (brug ikke await her)
 		// Du kan ikke direkte teste pending state, men kan sikre timingen
 	});
+
+	it('should reject with invalid data format (no name)', async () => {
+		const invalidData = { email: 'test@example.com' };
+		const promise = saveData(invalidData);
+
+		// Spring tiden frem
+		vi.advanceTimersByTime(1000);
+
+		// Testen at den rejecter med korrekt fejl
+		await expect(promise).rejects.toThrow('Invalid data format');
+	});
+
+	it('should reject when data is null', async () => {
+		const promise = saveData(null);
+
+		vi.advanceTimersByTime(1000);
+
+		await expect(promise).rejects.toThrow('Invalid data format');
+	});
 });
 
 //Øvelse 6: Testdækning og refaktorering
+
+describe('apiCall for coverage', () => {
+	beforeEach(() => {
+		vi.useFakeTimers();
+	});
+
+	afterEach(() => {
+		vi.restoreAllMocks();
+		vi.useRealTimers();
+	});
+
+	it('should resolve successfully with /success endpoint', async () => {
+		const promise = apiCall('/success');
+
+		vi.advanceTimersByTime(50);
+
+		const result = await promise;
+		expect(result.status).toBe(200);
+		expect(result.data).toBe('Success');
+	});
+
+	it('should reject with API error on /error endpoint', async () => {
+		const promise = apiCall('/error');
+
+		vi.advanceTimersByTime(50);
+
+		await expect(promise).rejects.toThrow('API Error: 500');
+	});
+
+	it('should reject with 404 error on unknown endpoint', async () => {
+		const promise = apiCall('/unknown');
+
+		vi.advanceTimersByTime(50);
+
+		await expect(promise).rejects.toThrow('Endpoint not found: 404');
+	});
+});

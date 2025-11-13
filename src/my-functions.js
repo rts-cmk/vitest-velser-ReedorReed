@@ -67,8 +67,11 @@ export function getFruitStock(type) {
 	if (type === 'pineapples') {
 		throw new Error('Pineapples are not in stock');
 	}
+	// Return random stock count for other fruits
+	return Math.floor(Math.random() * 100) + 1;
 }
 
 //Øvelse 5: Mocking af afhængigheder
+//Bruger Funktion der gemmer data til test
 
 //Øvelse 6: Testdækning og refaktorering
