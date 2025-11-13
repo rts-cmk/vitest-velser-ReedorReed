@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1763033148884" clover="3.2.0">
+  <project timestamp="1763033148884" name="All files">
+    <metrics statements="27" coveredstatements="27" conditionals="18" coveredconditionals="18" methods="11" coveredmethods="11" elements="56" coveredelements="56" complexity="0" loc="27" ncloc="27" packages="1" files="1" classes="1"/>
+    <file name="my-functions.js" path="/Users/reed/Documents/Coding/RTS/Hovedforlob/Frameworks-1/vitest/vitest-velser-ReedorReed/src/my-functions.js">
+      <metrics statements="27" coveredstatements="27" conditionals="18" coveredconditionals="18" methods="11" coveredmethods="11"/>
+      <line num="6" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="8" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="10" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="22" count="3" type="stmt"/>
+      <line num="23" count="3" type="stmt"/>
+      <line num="24" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="39" count="4" type="stmt"/>
+      <line num="40" count="4" type="stmt"/>
+      <line num="41" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="44" count="2" type="stmt"/>
+      <line num="52" count="3" type="stmt"/>
+      <line num="53" count="3" type="stmt"/>
+      <line num="54" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="56" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="57" count="1" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="67" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="68" count="1" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
